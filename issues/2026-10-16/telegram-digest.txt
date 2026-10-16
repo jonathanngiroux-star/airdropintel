@@ -1,0 +1,36 @@
+🚨 <b>AirdropIntel Issue #001</b> — weekly effort-vs-EV ranking (Oct 16, 2026)
+
+15 farms scored. 7 deadlines tracked. Public info only. Methodology: EV = confirmation 30%, value size 25%, cost 20%, time 15%, competition 10%; efficiency = EV ÷ hours/week.
+
+<b>FARM RANKING</b>
+🥇 <b>Wager Predict ($WP)</b> — EV 7.85 @ 1h/wk (eff 7.85). Confirmed airdrop, 10% allocation published, free testnet.
+🥈 <b>Axis Robotics</b> — EV 6.9 @ 1h/wk. Points, $12M raised. ⚠️ SNAPSHOT OCT 18 — act before Sunday.
+🥉 <b>Canopy ($CNPY)</b> — EV 9.05 (S-tier) @ 1.5h/wk. Confirmed drop, 50% supply to community, deploy a free testnet appchain for max points.
+
+<b>REST OF THE BOARD</b>
+4. Sekai — EV 5.95. Hyperliquid LST testnet, no points yet = classic retro setup.
+5. Apyx ($APYX) — EV 5.9 ⚠️ CAPITAL. TGE delayed, but Season 2 raised to 9%. Existing positions only — don't buy in for this.
+6. Orbinum ($ORB) — EV 7.65 @ 1.5h/wk. Confirmed Season 1, 20M ORB pool, 2 min/day.
+7. GIWA — EV 6.8. Upbit's L2. Precedent play (Base, Ink both rewarded).
+8. Nado ($INK) — EV 7.8 @ 2h/wk. Points confirmed → INK + $100k USDT0 weekly.
+9. Arc ($ARC) — EV 7.0. Circle's L1, 60% ecosystem allocation. KYC/geo risk likely.
+10. Checkpoint — EV 5.65. Points marketplace testnet, meta play.
+11. Ondo Perps — EV 6.15 ⚠️ CAPITAL. Trading, not farming.
+12. Polymarket — EV 5.95 ⚠️ CAPITAL. Confirmed intent, no criteria.
+13. Jumper — EV 5.9. Crowded; only worth it with volume you'd do anyway.
+14. Variational — EV 5.4. STALE SIGNAL: verify points window before grinding.
+15. Predict.fun — EV 4.55. Teased, unconfirmed. Skip.
+
+<b>DEADLINE RADAR</b>
+• Oct 19 — Fables claim option ends
+• Oct 20 — MINT TGE (verify on official channels)
+• Oct 25 — Pharos PROS claim closes (claim.pharos.xyz — type it manually)
+• ~Oct 27 — Pheasant PNT claim window ends
+• Jan 22, 2027 — Grass Stage 2 USDC claims close
+✅ Still open: Concrete CT (Binance Alpha ≥223 pts or Foundation route)
+
+Yesterday Sonic burned ~32.7M unclaimed $S. Check old claims first — it's free money vs. speculative grinding.
+
+<b>Early Access tier:</b> alerts 24-48h before this digest + full ranking first. $10/mo, pay in crypto. Reply or DM for the address list.
+
+⚠️ <b>Risk disclaimer:</b> Educational research from public sources. Not financial advice. Points have no guaranteed value and terms can change before TGE. Never sign transactions or share seed phrases for an "airdrop" — claim only on official domains you type yourself.

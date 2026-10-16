@@ -1,0 +1,9 @@
+# Never commit secrets or operational state
+secrets/
+state/
+payments/
+alerts/
+data/raw-*
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Canopy", "ticker": "CNPY", "type": "farm",
+    "status": "CONFIRMED airdrop; 50% of supply to community; testnet live since Feb 2026; airdrops.io marks claim portal LIVE — check it if you farmed",
+    "confirmation": 10, "value_size": 9, "cost": 10, "time": 8, "competition": 6,
+    "hours_per_week": 1.5, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "Deploy one testnet appchain (highest multiplier), then daily check-ins + quests",
+    "sources": ["https://airdrops.io/canopy/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Wager Predict", "ticker": "WP", "type": "farm",
+    "status": "Confirmed $WP airdrop, published 10% allocation, free incentivized testnet",
+    "confirmation": 9, "value_size": 5, "cost": 10, "time": 8, "competition": 7,
+    "hours_per_week": 1, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "Smaller ceiling than Canopy but excellent risk/reward — run both",
+    "sources": ["https://x.com/airdrops_io/article/2090032492401095159", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Axis Robotics", "ticker": "—", "type": "farm",
+    "status": "Points program, $12M raised — SNAPSHOT OCT 18: be active before it",
+    "confirmation": 6, "value_size": 6, "cost": 9, "time": 8, "competition": 6,
+    "hours_per_week": 1, "cost_label": "$0 / social+testnet", "capital": false,
+    "action_note": "URGENT: complete quest activity before Oct 18 snapshot",
+    "sources": ["https://alphadrops.net/airdrops/axis", "https://airdrops.io/axis-robotics/"]
+  },
+  {
+    "name": "Sekai", "ticker": "—", "type": "farm",
+    "status": "Hyperliquid LST protocol, public testnet since Jun 2026, NO points program yet (classic pre-points retro setup)",
+    "confirmation": 3, "value_size": 5, "cost": 9, "time": 8, "competition": 8,
+    "hours_per_week": 1, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "Weekly session: mint/redeem/swap LSTs, LP, file bug reports",
+    "sources": ["https://airdrops.io/sekai/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Apyx", "ticker": "APYX", "type": "farm",
+    "status": "TGE delayed past Oct 13; Season 2 raised to 9% of supply; Pips via hold/commit/LP apxUSD",
+    "confirmation": 7, "value_size": 6, "cost": 3, "time": 8, "competition": 5,
+    "hours_per_week": 1, "cost_label": "CAPITAL AT RISK (hold apxUSD)", "capital": true,
+    "action_note": "Only for existing positions — do NOT buy in just for the farm; existing positions keep scoring passively",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Orbinum", "ticker": "ORB", "type": "farm",
+    "status": "Confirmed Season 1, 20M ORB community pool; privacy L1, quiet = cheap farming",
+    "confirmation": 8, "value_size": 5, "cost": 10, "time": 8, "competition": 8,
+    "hours_per_week": 1.5, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "2 min/day: Discord faucet (10 ORB/24h) + one shielded transfer",
+    "sources": ["https://airdrops.io/orbinum/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "GIWA", "ticker": "—", "type": "farm",
+    "status": "Upbit's OP-Stack L2 (Korea's largest CEX, ~73% market). No token announced — precedent play (Base/Ink both rewarded)",
+    "confirmation": 4, "value_size": 7, "cost": 10, "time": 7, "competition": 8,
+    "hours_per_week": 1.5, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "One setup session (Sepolia faucet → bridge → deploy → mint NFT), then periodic touches",
+    "sources": ["https://airdrops.io/giwa/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Nado", "ticker": "INK", "type": "farm",
+    "status": "Points confirmed to convert to $INK at TGE; Season 2 open; Kraken-built; up to $100k USDT0 weekly",
+    "confirmation": 9, "value_size": 7, "cost": 8, "time": 7, "competition": 7,
+    "hours_per_week": 2, "cost_label": "cheap-gas mainnet (Ink)", "capital": false,
+    "action_note": "Confirmed double-dip: points → INK plus USDT0 leaderboard; xStocks adds reward layer",
+    "sources": ["https://x.com/airdrops_io/article/2090032492401095159", "https://alphadrops.net/airdrops/nado"]
+  },
+  {
+    "name": "Arc", "ticker": "ARC", "type": "farm",
+    "status": "Circle's institutional L1, USDC gas; whitepaper shows 60% ecosystem allocation; $222M presale @ $3B FDV. KYC/geo likely",
+    "confirmation": 5, "value_size": 8, "cost": 10, "time": 6, "competition": 6,
+    "hours_per_week": 2, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "Breadth beats volume: touch 4+ protocol types (swap, lend, LP, deploy), refresh weekly",
+    "sources": ["https://airdrops.io/arc/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Ondo Perps", "ticker": "—", "type": "farm",
+    "status": "5M Ondo Points weekly + USDC trading rewards pool; tokenized-stock perps",
+    "confirmation": 6, "value_size": 7, "cost": 6, "time": 6, "competition": 5,
+    "hours_per_week": 4, "cost_label": "CAPITAL AT RISK (perps trading)", "capital": true,
+    "action_note": "Points for real trading — position sizing discipline first; this is trading, not free farming",
+    "sources": ["https://alphadrops.net/airdrops/ondoperps", "https://x.com/airdrops_io/article/2090032492401095159"]
+  },
+  {
+    "name": "Checkpoint", "ticker": "—", "type": "farm",
+    "status": "Points-marketplace testnet, XP for market activity; no token confirmed; meta play",
+    "confirmation": 3, "value_size": 5, "cost": 10, "time": 6, "competition": 6,
+    "hours_per_week": 2, "cost_label": "$0 testnet", "capital": false,
+    "action_note": "Farm the venue where farms get traded — opportunistic only",
+    "sources": ["https://airdrops.io/checkpoint/", "https://airdrops.io/blog/best-testnets-to-farm-airdrops/"]
+  },
+  {
+    "name": "Jumper", "ticker": "JUMP", "type": "farm",
+    "status": "Ticker announced Sep 22; XP + Loyalty Pass; TGE expected Q4 2026",
+    "confirmation": 7, "value_size": 6, "cost": 5, "time": 6, "competition": 4,
+    "hours_per_week": 3, "cost_label": "bridge gas + capital in transit", "capital": false,
+    "action_note": "Crowded farm — only worth it with volume you'd do anyway",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Polymarket", "ticker": "POLY", "type": "farm",
+    "status": "Airdrop intent confirmed Oct 2025; no date, no criteria published",
+    "confirmation": 7, "value_size": 8, "cost": 4, "time": 5, "competition": 3,
+    "hours_per_week": 3, "cost_label": "CAPITAL AT RISK (prediction markets)", "capital": true,
+    "action_note": "Trade only what you'd trade anyway; criteria unknown = sizing discipline mandatory",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Variational", "ticker": "VAR", "type": "farm",
+    "status": "STALE SIGNAL — points clock was 'no later than end of Q3 2026'; VERIFY program still live before farming",
+    "confirmation": 4, "value_size": 7, "cost": 7, "time": 5, "competition": 3,
+    "hours_per_week": 3, "cost_label": "trading capital (spread costs)", "capital": false,
+    "action_note": "50% community supply and 150k Omni pts/wk looked great — but the window may have closed. Check first",
+    "sources": ["https://x.com/airdrops_io/article/2090032492401095159"]
+  },
+  {
+    "name": "Predict.fun", "ticker": "—", "type": "farm",
+    "status": "Token teased Oct 6, no claim page, no confirmed airdrop",
+    "confirmation": 2, "value_size": 5, "cost": 6, "time": 6, "competition": 6,
+    "hours_per_week": 2, "cost_label": "trading capital", "capital": false,
+    "action_note": "Lowest conviction on the board — skip unless already active there",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Sonic", "ticker": "S", "type": "claim",
+    "deadline": "2026-10-15 (CLOSED)", "action": "closed — unclaimed S burned",
+    "official_route": "my.soniclabs.com/airdrop (window over)",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Fables", "ticker": "—", "type": "claim",
+    "deadline": "2026-10-19", "action": "airdrop claim option ends Oct 19",
+    "official_route": "check airdrops.io listing for official portal; never DM links",
+    "sources": ["https://airdrops.io/fables/"]
+  },
+  {
+    "name": "MINT", "ticker": "MNTD", "type": "claim",
+    "deadline": "2026-10-20 (verify)", "action": "tracker lists TGE Oct 20; confirm on official MINT channels",
+    "official_route": "mint.io (XP dashboard)",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october", "https://airdrops.io/mint-io/"]
+  },
+  {
+    "name": "Pharos", "ticker": "PROS", "type": "claim",
+    "deadline": "2026-10-25", "action": "180-day claim window closes; unclaimed goes to foundation",
+    "official_route": "claim.pharos.xyz — TYPE IT MANUALLY, drainer lookalikes flagged",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Pheasant Network", "ticker": "PNT", "type": "claim",
+    "deadline": "~2026-10-27 (21d from Oct 6)", "action": "Season 1 claim open on Ethereum",
+    "official_route": "home.pheasant.network (only official domain)",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Concrete", "ticker": "CT", "type": "claim",
+    "deadline": "open", "action": "two routes: Binance Alpha (>=223 Alpha pts, 200 CT fee) or Foundation claim",
+    "official_route": "Concrete Foundation site / Binance Alpha",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  },
+  {
+    "name": "Grass Stage 2", "ticker": "USDC", "type": "claim",
+    "deadline": "2027-01-22", "action": "USDC payout for Epochs 1-19 bandwidth sharers",
+    "official_route": "app.grass.io → Allocation tab (links via DM = phishing)",
+    "sources": ["https://www.bitrue.com/blog/best-airdrop-october"]
+  }
+]
