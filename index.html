@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirdropIntel — Weekly effort-vs-EV airdrop ranking</title>
+<meta name="description" content="Weekly effort-vs-EV ranking of airdrop & points programs. Public info only. Free digest + early-access alerts.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237132f5'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>A</text></svg>">
+<style>
+:root{
+  --purple:#7132f5; --purple-dark:#5741d8; --purple-deep:#5b1ecf;
+  --purple-subtle:rgba(133,91,251,.16); --purple-faint:rgba(113,50,245,.07);
+  --ink:#101114; --gray:#686b82; --silver:#9497a9; --border:#dedee5;
+  --green:#149e61; --green-dark:#026b3f; --green-bg:rgba(20,158,97,.16);
+  --amber:#b8860b; --amber-bg:rgba(220,160,20,.14);
+  --red:#b42318; --red-bg:rgba(244,63,94,.12);
+  --bg:#ffffff; --bg-soft:#f7f7fa;
+  --shadow:rgba(0,0,0,.03) 0 4px 24px; --shadow-micro:rgba(16,24,40,.04) 0 1px 4px;
+  --r:12px; --r-sm:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.38;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:64px 0}
+h2{font-size:36px;font-weight:700;letter-spacing:-.5px;line-height:1.22;margin-bottom:8px}
+h3{font-size:22px;font-weight:600;line-height:1.2}
+.kicker{display:inline-block;font-size:12px;font-weight:600;color:var(--purple);background:var(--purple-subtle);border-radius:6px;padding:5px 10px;margin-bottom:16px;letter-spacing:.3px}
+.sub{color:var(--silver);font-size:16px;max-width:640px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+
+/* nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--ink);letter-spacing:-.3px}
+.logo:hover{text-decoration:none}
+.logo-mark{width:28px;height:28px;border-radius:7px;background:var(--purple);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:var(--gray);font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{background:var(--purple);color:#fff !important;padding:9px 14px;border-radius:var(--r);font-weight:600}
+.nav-cta:hover{background:var(--purple-dark)}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+/* hero */
+.hero{padding:88px 0 64px;background:
+  radial-gradient(1000px 400px at 80% -10%,var(--purple-faint),transparent 60%),var(--bg-soft)}
+.hero h1{font-size:clamp(34px,5.4vw,52px);font-weight:700;letter-spacing:-1px;line-height:1.12;max-width:760px}
+.hero .sub{font-size:18px;margin-top:18px}
+.cta-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 16px;border-radius:var(--r);font-size:16px;font-weight:600;border:none;cursor:pointer}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-dark);text-decoration:none}
+.btn-outline{background:#fff;color:var(--purple-dark);border:1px solid var(--purple-dark)}
+.btn-outline:hover{text-decoration:none;background:var(--purple-faint)}
+.btn-ghost{background:rgba(148,151,169,.08);color:var(--ink)}
+.btn-ghost:hover{text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+.stat{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-micro)}
+.stat .num{font-size:26px;font-weight:700;letter-spacing:-.5px}
+.stat .lbl{font-size:12px;color:var(--silver);margin-top:2px;font-weight:500}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700}
+.tier-S{background:var(--purple-subtle);color:var(--purple-deep)}
+.tier-A{background:var(--green-bg);color:var(--green-dark)}
+.tier-B{background:rgba(104,107,130,.12);color:#484b5e}
+.tier-C{background:var(--red-bg);color:var(--red)}
+.flag-capital{background:var(--amber-bg);color:var(--amber);border-radius:6px;padding:3px 8px;font-size:11px;font-weight:700}
+.flag-stale{background:var(--red-bg);color:var(--red);border-radius:6px;padding:3px 8px;font-size:11px;font-weight:700}
+
+/* podium */
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media(max-width:860px){.podium{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow);position:relative}
+.card .rank{font-size:12px;font-weight:700;color:var(--silver);letter-spacing:.5px}
+.card h3{margin:6px 0 2px;font-size:20px}
+.card .tk{color:var(--silver);font-size:13px;font-weight:500}
+.card p{color:var(--gray);font-size:14px;margin-top:12px}
+.evbar{height:6px;border-radius:3px;background:rgba(104,107,130,.12);margin-top:16px;overflow:hidden}
+.evbar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--purple-dark),var(--purple))}
+.evmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--silver);margin-top:8px;font-weight:500}
+.evmeta b{color:var(--ink)}
+.card .badges{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.urg{position:absolute;top:18px;right:18px;background:var(--red-bg);color:var(--red);font-size:11px;font-weight:700;border-radius:6px;padding:4px 8px}
+
+/* table */
+.tablewrap{overflow-x:auto;margin-top:28px;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-micro);background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
+th{text-align:left;font-size:12px;font-weight:600;color:var(--silver);padding:12px 16px;border-bottom:1px solid var(--border);letter-spacing:.4px;text-transform:uppercase}
+td{padding:13px 16px;border-bottom:1px solid rgba(222,222,229,.6);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--purple-faint)}
+.proj{font-weight:600}
+.proj small{display:block;color:var(--silver);font-weight:400;font-size:12px;margin-top:1px}
+.evt{display:flex;align-items:center;gap:8px}
+.evt .bar{width:64px;height:5px;border-radius:3px;background:rgba(104,107,130,.12);overflow:hidden;flex:none}
+.evt .bar i{display:block;height:100%;background:var(--purple)}
+.hours,.eff{font-weight:600}
+
+/* deadlines */
+.deadlines{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.dl{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-micro)}
+.dl .date{flex:none;width:74px;text-align:center;border-radius:var(--r-sm);padding:8px 4px;background:var(--purple-subtle)}
+.dl .date b{display:block;font-size:18px;color:var(--purple-deep)}
+.dl .date span{font-size:11px;font-weight:600;color:var(--purple-dark);text-transform:uppercase}
+.dl .what{flex:1}
+.dl .what b{font-size:15px}
+.dl .what p{color:var(--gray);font-size:13px;margin-top:3px}
+.dl.closed .date{background:rgba(104,107,130,.12)}
+.dl.closed .date b,.dl.closed .date span{color:#686b82}
+
+/* methodology */
+.method{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;margin-top:28px;align-items:start}
+@media(max-width:860px){.method{grid-template-columns:1fr}}
+.wrow{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:14px}
+.wrow .lbl{width:130px;font-weight:600;flex:none}
+.wrow .trk{flex:1;height:8px;border-radius:4px;background:rgba(104,107,130,.12);overflow:hidden}
+.wrow .trk i{display:block;height:100%;background:var(--purple)}
+.wrow .pct{width:44px;text-align:right;color:var(--silver);font-weight:600;font-size:13px;flex:none}
+.formula{background:var(--bg-soft);border:1px solid var(--border);border-radius:16px;padding:22px;font-size:14px}
+.formula .mono{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--r-sm);padding:12px;margin:10px 0;font-size:13px;color:var(--ink)}
+.tiers{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+
+/* pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media(max-width:860px){.pricing{grid-template-columns:1fr}}
+.price{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:var(--shadow);text-align:center}
+.price.feature{border:2px solid var(--purple);position:relative}
+.price.feature .pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:700}
+.price .amt{font-size:36px;font-weight:700;letter-spacing:-1px;margin:8px 0 2px}
+.price .per{color:var(--silver);font-size:13px}
+.price ul{list-style:none;text-align:left;margin:18px 0 22px;display:flex;flex-direction:column;gap:9px}
+.price li{font-size:14px;color:var(--gray);padding-left:24px;position:relative}
+.price li::before{content:"✓";position:absolute;left:2px;color:var(--green);font-weight:700}
+.price .btn{width:100%;justify-content:center}
+
+/* footer */
+footer{border-top:1px solid var(--border);background:var(--bg-soft);padding:40px 0 48px;margin-top:32px}
+.disc{background:rgba(104,107,130,.08);border-radius:var(--r);padding:16px 18px;font-size:13px;color:var(--gray);margin-top:24px}
+.foot-links{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap;font-size:14px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#top"><span class="logo-mark">A</span>AirdropIntel</a>
+    <div class="nav-links">
+      <a href="#ranking">Ranking</a>
+      <a href="#deadlines">Deadlines</a>
+      <a href="#methodology">Methodology</a>
+      <a href="https://github.com/jonathanngiroux-star/airdropintel">GitHub</a>
+      <a class="nav-cta" href="#early-access">Early Access</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <span class="kicker">ISSUE #001 — OCTOBER 16, 2026</span>
+    <h1>The weekly airdrop ranking, scored by effort vs expected value.</h1>
+    <p class="sub">Every farm gets the same model: how confirmed is the drop, how big, what does it cost, how much time does it eat, how crowded is the room. Public information only — sources cited for every project, every week.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#ranking">View this week's ranking</a>
+      <a class="btn btn-outline" href="https://x.com/JackChurchill75/status/2111138018916544980">Read on X</a>
+      <a class="btn btn-ghost" href="https://github.com/jonathanngiroux-star/airdropintel">GitHub repo →</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">15</div><div class="lbl">farms scored</div></div>
+      <div class="stat"><div class="num">7</div><div class="lbl">claim deadlines tracked</div></div>
+      <div class="stat"><div class="num">11</div><div class="lbl">$0-entry plays on the board</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">flagged capital-at-risk</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="ranking">
+  <div class="container">
+    <span class="kicker">THE BOARD</span>
+    <h2>Farm ranking</h2>
+    <p class="sub">Sorted by farm efficiency — EV divided by hours per week. That's the honest metric: what you get for the time you burn. Tier S ≥ 8.0 · A ≥ 6.5 · B ≥ 5.0 · C < 5.0.</p>
+
+    <div class="podium">
+      <div class="card">
+        <div class="rank">#1 · EFFICIENCY 7.85</div>
+        <h3>Wager Predict</h3>
+        <div class="tk">$WP · confirmed airdrop</div>
+        <p>10% of supply published up front, free incentivized testnet, ~1h/week of quests. Best efficiency on the board: a confirmed drop that costs nothing but time.</p>
+        <div class="evbar"><i style="width:78.5%"></i></div>
+        <div class="evmeta"><span>EV <b>7.85</b></span><span><b>1h</b>/wk</span></div>
+        <div class="badges"><span class="badge tier-A">TIER A</span></div>
+      </div>
+      <div class="card">
+        <div class="urg">SNAPSHOT OCT 18</div>
+        <div class="rank">#2 · EFFICIENCY 6.90</div>
+        <h3>Axis Robotics</h3>
+        <div class="tk">points program · $12M raised</div>
+        <p>Snapshot lands Sunday. If you have quest history, top up now. Starting fresh? One focused session before the cut still counts.</p>
+        <div class="evbar"><i style="width:69%"></i></div>
+        <div class="evmeta"><span>EV <b>6.90</b></span><span><b>1h</b>/wk</span></div>
+        <div class="badges"><span class="badge tier-A">TIER A</span></div>
+      </div>
+      <div class="card">
+        <div class="rank">#3 · S-TIER EV 9.05</div>
+        <h3>Canopy</h3>
+        <div class="tk">$CNPY · confirmed airdrop</div>
+        <p>The only S-tier on the board. 50% of supply to community, testnet free since February, and deploying your own testnet appchain earns the highest points multiplier. ~1.5h/wk.</p>
+        <div class="evbar"><i style="width:90.5%"></i></div>
+        <div class="evmeta"><span>EV <b>9.05</b></span><span><b>1.5h</b>/wk</span></div>
+        <div class="badges"><span class="badge tier-S">TIER S</span></div>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>#</th><th>Project</th><th>Tier</th><th>EV</th><th>Hrs/wk</th><th>Efficiency</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>4</td><td class="proj">Sekai<small>Hyperliquid LST testnet</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:59.5%"></i></span>5.95</div></td><td class="hours">1</td><td class="eff">5.95</td><td>No points yet — classic retroactive setup</td></tr>
+          <tr><td>5</td><td class="proj">Apyx<small>$APYX · TGE delayed, S2 → 9% of supply</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:59%"></i></span>5.90</div></td><td class="hours">1</td><td class="eff">5.90</td><td><span class="flag-capital">⚠ CAPITAL</span> existing positions only — don't buy in for this</td></tr>
+          <tr><td>6</td><td class="proj">Orbinum<small>$ORB · confirmed Season 1, 20M pool</small></td><td><span class="badge tier-A">A</span></td><td><div class="evt"><span class="bar"><i style="width:76.5%"></i></span>7.65</div></td><td class="hours">1.5</td><td class="eff">5.10</td><td>Quiet privacy L1 — 2 min/day faucet + shielded transfer</td></tr>
+          <tr><td>7</td><td class="proj">GIWA<small>Upbit's OP-Stack L2</small></td><td><span class="badge tier-A">A</span></td><td><div class="evt"><span class="bar"><i style="width:68%"></i></span>6.80</div></td><td class="hours">1.5</td><td class="eff">4.53</td><td>Precedent play — Base and Ink both rewarded early users</td></tr>
+          <tr><td>8</td><td class="proj">Nado<small>points confirmed → $INK at TGE</small></td><td><span class="badge tier-A">A</span></td><td><div class="evt"><span class="bar"><i style="width:78%"></i></span>7.80</div></td><td class="hours">2</td><td class="eff">3.90</td><td>Kaken-built DEX + up to $100k USDT0 weekly leaderboard</td></tr>
+          <tr><td>9</td><td class="proj">Arc<small>Circle's institutional L1</small></td><td><span class="badge tier-A">A</span></td><td><div class="evt"><span class="bar"><i style="width:70%"></i></span>7.00</div></td><td class="hours">2</td><td class="eff">3.50</td><td>60% ecosystem allocation — but KYC/geo restrictions likely</td></tr>
+          <tr><td>10</td><td class="proj">Checkpoint<small>points-marketplace testnet</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:56.5%"></i></span>5.65</div></td><td class="hours">2</td><td class="eff">2.83</td><td>Meta play: farm the venue where farms get traded</td></tr>
+          <tr><td>11</td><td class="proj">Ondo Perps<small>5M points weekly + USDC rewards</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:61.5%"></i></span>6.15</div></td><td class="hours">4</td><td class="eff">1.54</td><td><span class="flag-capital">⚠ CAPITAL</span> trading, not farming</td></tr>
+          <tr><td>12</td><td class="proj">Polymarket<small>airdrop intent confirmed, no criteria</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:59.5%"></i></span>5.95</div></td><td class="hours">3</td><td class="eff">1.98</td><td><span class="flag-capital">⚠ CAPITAL</span> trade only what you'd trade anyway</td></tr>
+          <tr><td>13</td><td class="proj">Jumper<small>$JUMP · ticker announced, TGE Q4</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:59%"></i></span>5.90</div></td><td class="hours">3</td><td class="eff">1.97</td><td>Crowded — only worth it with volume you'd do anyway</td></tr>
+          <tr><td>14</td><td class="proj">Variational<small>$VAR · 50% community supply</small></td><td><span class="badge tier-B">B</span></td><td><div class="evt"><span class="bar"><i style="width:54%"></i></span>5.40</div></td><td class="hours">3</td><td class="eff">1.80</td><td><span class="flag-stale">STALE</span> points window likely closed Q3 — verify first</td></tr>
+          <tr><td>15</td><td class="proj">Predict.fun<small>token teased Oct 6</small></td><td><span class="badge tier-C">C</span></td><td><div class="evt"><span class="bar"><i style="width:45.5%"></i></span>4.55</div></td><td class="hours">2</td><td class="eff">2.27</td><td>Nothing confirmed. Skip unless already active there</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--silver);font-size:13px;margin-top:12px">Full machine-readable data with per-project sources: <a href="rankings/ranking-2026-10-16.md" class="mono">rankings/ranking-2026-10-16.md</a></p>
+  </div>
+</section>
+
+<section id="deadlines" style="background:var(--bg-soft)">
+  <div class="container">
+    <span class="kicker">DEADLINE RADAR</span>
+    <h2>Claims & windows — act before you farm</h2>
+    <p class="sub">An unclaimed airdrop beats a speculative farm. Yesterday Sonic burned ~32.7M unclaimed $S after its Oct 15 deadline — don't be next. Claim only on official domains you type yourself; DM links are drainers.</p>
+    <div class="deadlines">
+      <div class="dl closed">
+        <div class="date"><b>15</b><span>Oct</span></div>
+        <div class="what"><b>Sonic ($S) — closed</b><p>~32.69M unclaimed tokens burned, no extension. The cautionary tale.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>19</b><span>Oct</span></div>
+        <div class="what"><b>Fables — claim option ends</b><p>Airdrop claim window closes. Check the official portal if you're eligible.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>20</b><span>Oct</span></div>
+        <div class="what"><b>MINT ($MNTD) — TGE listed</b><p>Tracker date; not yet verified on MINT's own channels. Confirm before acting.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>25</b><span>Oct</span></div>
+        <div class="what"><b>Pharos ($PROS) — 180-day claim window closes</b><p>Unclaimed returns to the foundation. Type <span class="mono">claim.pharos.xyz</span> manually — lookalike drainer domains have been flagged.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>27</b><span>Oct</span></div>
+        <div class="what"><b>Pheasant Network ($PNT) — Season 1 claim ends</b><p>21-day window from Oct 6 on Ethereum. Only <span class="mono">home.pheasant.network</span> is official.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>22</b><span>Jan '27</span></div>
+        <div class="what"><b>Grass Stage 2 — USDC payouts close</b><p>Epochs 1–19 bandwidth sharers: check the Allocation tab in the official dashboard.</p></div>
+      </div>
+      <div class="dl">
+        <div class="date"><b>OPEN</b><span>now</span></div>
+        <div class="what"><b>Concrete ($CT) — two claim routes live</b><p>Binance Alpha (≥223 Alpha points, 200 CT fee) or the Foundation claim interface.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="methodology">
+  <div class="container">
+    <span class="kicker">OPEN MODEL</span>
+    <h2>How everything is scored</h2>
+    <p class="sub">The same five inputs, the same weights, every week — weighted by what has historically mattered in retroactive distributions.</p>
+    <div class="method">
+      <div>
+        <div class="wrow"><span class="lbl">Confirmation</span><span class="trk"><i style="width:30%"></i></span><span class="pct">30%</span></div>
+        <div class="wrow"><span class="lbl">Value size</span><span class="trk"><i style="width:25%"></i></span><span class="pct">25%</span></div>
+        <div class="wrow"><span class="lbl">Cost</span><span class="trk"><i style="width:20%"></i></span><span class="pct">20%</span></div>
+        <div class="wrow"><span class="lbl">Time demand</span><span class="trk"><i style="width:15%"></i></span><span class="pct">15%</span></div>
+        <div class="wrow"><span class="lbl">Competition</span><span class="trk"><i style="width:10%"></i></span><span class="pct">10%</span></div>
+        <div class="tiers">
+          <span class="badge tier-S">S ≥ 8.0</span><span class="badge tier-A">A ≥ 6.5</span><span class="badge tier-B">B ≥ 5.0</span><span class="badge tier-C">C < 5.0</span>
+        </div>
+        <p style="color:var(--gray);font-size:14px;margin-top:20px">Cost 10 = genuinely $0 (testnet, faucets, quests). Capital-at-risk plays are capped low and always flagged — that's trading, not farming, and we don't pump it.</p>
+      </div>
+      <div class="formula">
+        <b>The model</b>
+        <span class="mono">EV = 0.30·confirm + 0.25·value + 0.20·cost + 0.15·time + 0.10·competition</span>
+        <span class="mono">Efficiency = EV ÷ max(hrs/week, 0.5)</span>
+        <span class="mono">Tier: S ≥ 8.0 · A ≥ 6.5 · B ≥ 5.0 · C < 5.0</span>
+        <p style="color:var(--gray);font-size:13px;margin-top:12px">Efficiency is the sort key — it answers the only question that matters: <i>what do I get per hour of my life?</i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="early-access" style="background:var(--bg-soft)">
+  <div class="container">
+    <span class="kicker">EARLY ACCESS</span>
+    <h2>Get the signals before the digest</h2>
+    <p class="sub">Paid tier receives time-sensitive alerts — snapshot dates, claim windows, points-program launches — 24–48h before the free digest. Manual crypto payments, no auto-renew, cancel by just not paying.</p>
+    <div class="pricing">
+      <div class="price">
+        <div class="per">MONTHLY</div>
+        <div class="amt">$10</div>
+        <div class="per">per month</div>
+        <ul>
+          <li>Early-access alerts 24–48h ahead</li>
+          <li>Full weekly ranking first</li>
+          <li>Sources cited, always</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://x.com/JackChurchill75">DM on X</a>
+      </div>
+      <div class="price feature">
+        <span class="pop">BEST VALUE</span>
+        <div class="per">6 MONTHS</div>
+        <div class="amt">$50</div>
+        <div class="per">≈ $8.33/mo — save 17%</div>
+        <ul>
+          <li>Everything in monthly</li>
+          <li>Locked pricing across seasons</li>
+          <li>Priority DM responses</li>
+        </ul>
+        <a class="btn btn-primary" href="https://x.com/JackChurchill75">DM on X</a>
+      </div>
+      <div class="price">
+        <div class="per">ANNUAL</div>
+        <div class="amt">$90</div>
+        <div class="per">≈ $7.50/mo — save 25%</div>
+        <ul>
+          <li>Everything in 6-month</li>
+          <li>Full-year coverage across TGE seasons</li>
+          <li>Quarterly portfolio review notes</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://x.com/JackChurchill75">DM on X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a class="logo" href="#top"><span class="logo-mark">A</span>AirdropIntel</a>
+    <div class="foot-links">
+      <a href="https://x.com/JackChurchill75/status/2111138018916544980">X / Twitter</a>
+      <a href="https://github.com/jonathanngiroux-star/airdropintel">GitHub</a>
+      <a href="rankings/ranking-2026-10-16.md">Latest ranking (raw)</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#early-access">Early Access</a>
+    </div>
+    <div class="disc">
+      <b>Risk disclaimer:</b> Educational research from public sources. Not financial advice. Points and expected values are estimates with no guarantee — programs can change or void terms at any time before TGE. Never sign transactions, share seed phrases, or connect wallets for an "airdrop"; use official domains typed by hand. Capital-at-risk plays are flagged as trading, not farming.
+    </div>
+    <p style="color:var(--silver);font-size:12px;margin-top:16px">© 2026 AirdropIntel · Public information only · No private deals, no undisclosed promotions · Issue #001</p>
+  </div>
+</footer>
+
+</body>
+</html>
